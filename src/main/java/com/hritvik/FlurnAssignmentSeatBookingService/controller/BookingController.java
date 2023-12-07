@@ -17,14 +17,14 @@ public class BookingController {
     @Autowired
     private BookingService bookingService;
 
-//    @PostMapping("booking")
-//    public ResponseEntity<?> createBooking(@RequestBody BookingRequest request) {
-//        List<Long> seatIds = request.getSeatIds();
-//        String userName = request.getUserName();
-//        String phoneNumber = request.getPhoneNumber();
-//
-//        return bookingService.createBooking(seatIds, userName, phoneNumber);
-//    }
+    @PostMapping("booking")
+    public ResponseEntity<?> createBooking(@RequestBody BookingRequest request) {
+        List<Long> seatIds = request.getSeatIds();
+        String userName = request.getUserName();
+        String phoneNumber = request.getPhoneNumber();
+
+        return bookingService.createBooking(seatIds, userName, phoneNumber);
+    }
 
     @GetMapping("bookings")
     public ResponseEntity<?> getBookings(@RequestParam("userIdentifier") String userIdentifier) {

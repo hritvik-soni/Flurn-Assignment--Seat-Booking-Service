@@ -34,10 +34,10 @@ public class SeatController {
         return ResponseEntity.ok(seats);
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<SeatDetails> getSeatPricingById(@PathVariable Long id) {
-//       return seatService.getSeatPricingById(id);
-//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<SeatDetails> getSeatPricingById(@PathVariable Long id) {
+       return seatService.getSeatPricingById(id);
+    }
     @PostMapping("/addPrice")
     public void addPrice (@RequestBody List<SeatPricing> pricingList){
         seatPricingRepository.saveAll(pricingList);
