@@ -22,7 +22,7 @@ public class SeatService {
     private SeatPricingService seatPricingService;
 
     public List<Seat> getAllSeats() {
-        return seatRepository.findAll();
+        return seatRepository.findAllByOrderBySeatClassAsc();
     }
 
     public Optional<Seat> getSeatById(Long seatId) {
@@ -66,8 +66,8 @@ public class SeatService {
 
             seatDetails.setSeatClass(seat.get().getSeatClass());
             seatDetails.setId(seat.get().getId());
-
             seatDetails.setSeatPrice(amount);
+            seatDetails.setSeatsBooked(seat.get().isBooked());
             return new ResponseEntity<>(seatDetails,HttpStatus.OK);
 
         }

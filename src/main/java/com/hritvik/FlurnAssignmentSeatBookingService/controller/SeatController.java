@@ -22,29 +22,15 @@ public class SeatController {
 
     @Autowired
     private  SeatService seatService;
-    @Autowired
-    private SeatPricingRepository seatPricingRepository;
-    @Autowired
-    private SeatRepository seatRepository;
-
 
     @GetMapping()
     public ResponseEntity<List<Seat>> getAllSeats() {
         List<Seat> seats = seatService.getAllSeats();
         return ResponseEntity.ok(seats);
     }
-
     @GetMapping("/{id}")
     public ResponseEntity<SeatDetails> getSeatPricingById(@PathVariable Long id) {
        return seatService.getSeatPricingById(id);
     }
-    @PostMapping("/addPrice")
-    public void addPrice (@RequestBody List<SeatPricing> pricingList){
-        seatPricingRepository.saveAll(pricingList);
-    }
-    @GetMapping("/get")
-        public Optional<Seat> getSeat (@RequestParam Long id){
-            return seatRepository.findById(id);
-        }
 
 }

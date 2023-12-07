@@ -7,14 +7,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class SeatDetails {
-
-    private Long id;
-    private String seatClass;
-    private double seatPrice;
-    private boolean seatsBooked;
+public class EmailDetail {
+    private String recipient;
+    private String messageBody;
+    private String subject;
 
 }

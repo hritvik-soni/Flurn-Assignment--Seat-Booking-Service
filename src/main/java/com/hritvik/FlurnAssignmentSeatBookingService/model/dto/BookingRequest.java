@@ -16,5 +16,6 @@ public class BookingRequest {
 
     private List<Long> seatIds;
     private String userName;
+    private String userEmail;
     private String phoneNumber;
 }

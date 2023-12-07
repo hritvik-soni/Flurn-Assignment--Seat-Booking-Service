@@ -22,8 +22,9 @@ public class BookingController {
         List<Long> seatIds = request.getSeatIds();
         String userName = request.getUserName();
         String phoneNumber = request.getPhoneNumber();
+        String email = request.getUserEmail();
 
-        return bookingService.createBooking(seatIds, userName, phoneNumber);
+        return bookingService.createBooking(seatIds, userName, phoneNumber,email);
     }
 
     @GetMapping("bookings")

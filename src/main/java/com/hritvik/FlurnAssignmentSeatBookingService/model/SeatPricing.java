@@ -15,10 +15,9 @@ public class SeatPricing {
 
     @Id
     private Long id;
-
     private String seatClass;
     private double minPrice;
     private double maxPrice;
     private double normalPrice;
-//    private boolean seatsBooked;
+
 }
