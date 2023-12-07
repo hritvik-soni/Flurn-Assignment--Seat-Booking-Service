@@ -18,7 +18,7 @@ public class Seat {
     private Long id;
     private String seat_identifiers;
     private String seatClass;
-     private boolean isBooked= false;
+    private boolean isBooked= false;
 
 
 }
